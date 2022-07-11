@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minesweeper</title>
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
+    
+    <script defer src='./action.js'></script>
+    <script defer src='./index.js'></script>
+</head>
+<body>
+    <main>
+        <nav>
+            <h1>Minesweeper</h1>
+            <div>
+                <div>
+                    <h4>Mines</h4>
+                    <span id="mine-count"></span>
+                </div>
+                <div>
+                    <h4>Flags</h4>
+                    <span id="flag-count">0</span>
+                </div>
+                <div>
+                    <h4>Difficulty</h4>
+                    <span id='difficulty-level'>Medium</span>
+                </div>
+            </div>    
+        </nav>
+        <div class='wrapper'>
+            <div class='game'>
+                <canvas id="game-board" width="500" height="500"></canvas>
+            </div>
+            <div class='control-panel'>
+                <fieldset>
+                    <legend>Controls (for PC)</legend>
+                    <section>
+                        <label for='reveal-action'>Reveal Tile :</label>
+                        <ul id='reveal-action'>
+                            <li><span class='mouse l-click'></span></li>
+                        </ul>
+                    <section>
+                    <section>
+                        <label for='flag-action'>Flag Tile :</label>
+                        <ul id='flag-action'>
+                            <li><span class="mouse r-click"></span></li>
+                            <li><span class='key'>Alt</span> / <span class='key'>&#8984 Cmd</span> + <span class="mouse l-click"></span></li>
+                        </ul>
+                    </section>
+                    <section>
+                        <label for='restart-action'>Retry :</label>
+                        <ul id='restart-action'>
+                            <li><span class='key'>R</span> or <span class='key'>r</span></li>
+                        </ul>
+                    </section>
+                </fieldset>
+                <fieldset class='settings'>
+                    <legend>Settings</legend>
+                    <section>
+                        <label for="difficulties">Difficulty :</label>
+                        <select id='difficulties'>
+                            <option value='0'>Easy</option>
+                            <option value='1'>Medium</option>
+                            <option value='2'>Hard</option>
+                            <option value='3'>Very Hard</option>
+                            <option value='4'>50% Mines</option>
+                            <option value='5'>75% Mines</option>
+                        </select>
+                        <button type='button' onclick="setVars(gameTracker)">Submit</button>
+                    </section>
+                    <section>
+                        <label for='restart'>Reset Board :</label>
+                        <button id='restart' onclick="resetBoard()">Retry</button>
+                    </section>
+                </fieldset>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
