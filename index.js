@@ -3,6 +3,7 @@ const flagCount = document.querySelector('#flag-count');
 const difficultyLevel = document.querySelector('#difficulty-level');
 const mineCount = document.querySelector('#mine-count');
 const canvas = document.querySelector('#game-board');
+const resetButton = document.querySelector("#restart");
 
 // -- Game board and settings -- //
 const ctx = canvas.getContext('2d');
@@ -208,3 +209,7 @@ window.onkeydown = (e) => {
         resetBoard(gameTracker);
     }
 };
+
+resetButton.addEventListener("click", (e) => {
+	resetBoard(gameTracker);
+})
